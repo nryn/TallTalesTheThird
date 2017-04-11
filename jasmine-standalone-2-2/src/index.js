@@ -11,12 +11,23 @@ function Story(){
   this.MESSAGE_LIMIT = 20;
 }
 
+Story.prototype.endStory = function() {
+  this.over = true
+  this.showFullStory()
+}
+
 Story.prototype.addMessage = function(text) {
   if (this.messages.length < this.MESSAGE_LIMIT) {
     var message = new Message(text);
     this.messages.push(message);
     return message;
   } else {
-    return "the game is over"
+    throw new Error("the game is over")
   }
+};
+
+Story.prototype.showFullStory = function() {
+  return this.messages.map(function(message) {
+      return message.text
+  }).join(" ");
 };

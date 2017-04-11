@@ -36,9 +36,24 @@ describe("Story", function() {
     for(i=0;i<story.MESSAGE_LIMIT;i++) {
       story.addMessage("this is a regular message")
     }
-    expect(story.addMessage("this should be game over")).toEqual("the game is over")
+    expect(function() {
+      story.addMessage("this should be game over")
+    }).toThrowError("the game is over")
   });
 
+  it("should end the story on the max message submission", function() {
+    for(i = 0; i < story.MESSAGE_LIMIT; i++) {
+      story.addMessage("this is a message")
+    }
+    expect(story.over).toBe(true)
+  });
+
+  it("should return the full story", function() {
+    for(i=0; i<2; i++) {
+      story.addMessage("this is a regular message")
+    }
+    expect(story.showFullStory()).toEqual("this is a regular message this is a regular message")
+  });
 });
 
 
