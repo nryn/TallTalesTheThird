@@ -11,25 +11,26 @@ Message.prototype.showText = function () {
 function Story(){
   this.messages = [];
   this.MESSAGE_LIMIT = 20;
-}
+  this.over = false;
+};
 
-function = roundChecker() {
-  if (this.messages.length < this.MESSAGE_LIMIT) {
-  return true
-}
-  else {
-    endStory();
+Story.prototype.isStoryOver = function() {
+  if (this.over == true) {
+    throw new Error("the game is over")
   }
 };
 
 
 Story.prototype.addMessage = function(text) {
-  roundChecker();
-    var message = new Message(text);
-    this.messages.push(message);
-    return message;
-  } else {
-    throw new Error("the game is over")
+  this.isStoryOver();
+  var message = new Message(text);
+  this.messages.push(message);
+  this.isStoryStillGoing();
+};
+
+Story.prototype.isStoryStillGoing = function () {
+  if (this.messages.length === this.MESSAGE_LIMIT) {
+    this.endStory();
   }
 };
 

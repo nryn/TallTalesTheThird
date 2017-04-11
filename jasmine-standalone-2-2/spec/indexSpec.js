@@ -24,7 +24,8 @@ describe("Story", function() {
   });
 
   it("can make message objects", function() {
-    expect(story.addMessage("i am the text again").constructor.name).toEqual("Message")
+    story.addMessage("i am the text again")
+    expect(story.messages[0].constructor.name).toEqual("Message")
   });
 
   it("should accept messages in to the array", function() {
