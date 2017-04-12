@@ -1,3 +1,5 @@
+var Message = require('../src/message')
+
 describe("Message", function() {
 
   beforeEach(function() {

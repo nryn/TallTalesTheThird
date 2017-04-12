@@ -1,3 +1,5 @@
+var Story = require('../src/story');
+
 describe("Story", function() {
 
   beforeEach(function() {
@@ -24,7 +26,7 @@ describe("Story", function() {
     }
     expect(function() {
       story.addMessage("this should be game over")
-    }).toThrowError("the game is over")
+    }).toThrow("the game is over")
   });
 
   it("should end the story on the max message submission", function() {
