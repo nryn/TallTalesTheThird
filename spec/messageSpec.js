@@ -1,4 +1,4 @@
-var Message = require('../src/message')
+var Message = require('../app/message')
 
 describe("Message", function() {
 

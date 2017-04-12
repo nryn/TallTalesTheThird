@@ -1,4 +1,4 @@
-var Story = require('../src/story');
+var Story = require('../app/story');
 
 describe("Story", function() {
 
