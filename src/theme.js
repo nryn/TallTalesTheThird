@@ -1,14 +1,21 @@
 'use strict';
 
 function Theme(chosenTheme, amount){
-  Math.rand
-  return x
-}
+
+};
+
+Theme.prototype.findThemeWords = function (chosenTheme, amount) {
+  var array = []
+  for(var i = 0; i < amount; i++) {
+    var word = themeWords.chosenTheme[Math.floor(Math.random()*themeWords.chosenTheme.length)];
+    array.push(word)
+  }
+    return array
+};
 
 var themeWords = {
-"fantasy" : ["these","are","words"]
+  "fantasy" : ["these","are", "potato", "chocolate"],
+  "space" : ["more", "random", "words"]
 }
 
-module.exports = Story;
-
-console.log("themeWordsTest" + themeWordsTest)
+module.exports = Theme;
