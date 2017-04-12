@@ -1,0 +1,15 @@
+{
+  "name": "TallTales",
+  "version": "0.0.1",
+  "description": "Turn-based story-making game",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "TallTalesTeam",
+  "license": "ISC",
+  "dependencies": {
+    "express": "*",
+    "socket.io": "*"
+  }
+}
