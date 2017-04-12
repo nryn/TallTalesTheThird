@@ -1,28 +1,39 @@
 'use strict'
 
-describe("Theme", function() {
+fdescribe("Theme", function() {
   var theme;
 
   beforeEach(function() {
-    theme = new Theme('theme', 2);
+    theme = new Theme("fantasy", 2);
   });
 
-  it("to return the number of words requested", function() {
-    expect(theme.findThemeWords("theme", 2).length).toEqual(2)
+  fit("should contain stored words array", function() {
+    expect(theme.storyWords.constructor.name).toEqual('Array')
   });
 
-  fdescribe('testing randomiser', function() {
+  fit("should store the name of the theme given on instantiation", function() {
+    expect(theme.storyTheme).toEqual('fantasy')
+  });
 
-    spyOn(Theme.findThemeWords.prototype, '';
+  fit("to return the number of words requested", function() {
+    expect(theme.findThemeWords("fantasy", 2).length).toEqual(2)
+  });
 
-    fit("returns a selection of random words from a theme", function(){
+  fit("to return the number of words requested", function() {
+    expect(theme.findThemeWords("fantasy", 4).length).toEqual(4)
+  });
 
-      expect(theme.findThemeWords("fantasy", 2)).toContain("these", "are")
-    });
+  fit("returns strings from the chosen theme collection", function(){
+    expect(theme.findThemeWords("fantasy", 1)[0].constructor.name).toEqual('String')
+  });
 
-    // fit("returns a selection of random words from a theme", function(){
-    //   console.log('i got here')
-    //   expect(theme.findThemeWords("space", 2)).toContain("more", "random")
-    // });
+  fit("returns a selection of random words from a theme", function(){
+    var chosenWord = theme.findThemeWords("fantasy", 1)[0]
+    expect(themeWords.fantasy).toContain(chosenWord)
+  });
+
+  fit("returns a selection of random words from a theme", function(){
+    var chosenWord = theme.findThemeWords("space", 1)[0]
+    expect(themeWords.space).toContain(chosenWord)
   });
 });
