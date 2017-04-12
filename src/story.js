@@ -1,12 +1,6 @@
-'use strict';
+'use strict'
 
-function Message(text){
-  this.text = text;
-}
-
-Message.prototype.showText = function () {
-  return this.text;
-};
+var Message = require('./message')
 
 function Story(){
   this.messages = [];
@@ -41,3 +35,6 @@ Story.prototype.endStory = function() {
 Story.prototype.showFullStory = function() {
   return this.messages.map(message => message.text).join(" \n");
 };
+
+
+module.exports = Story;
