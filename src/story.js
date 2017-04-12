@@ -1,6 +1,10 @@
 'use strict'
 
-var Message = require('./message')
+try {
+  var Message = require('./message')
+} catch(e) {
+  console.log("caught exception "+ e)
+}
 
 function Story(){
   this.messages = [];
@@ -13,11 +17,9 @@ Story.prototype.isStoryOver = function() {
   }
 };
 
-
 Story.prototype.addMessage = function(text) {
   this.isStoryOver();
-  var message = new Message(text);
-  this.messages.push(message);
+  this.messages.push(new Message(text));
   this.isStoryStillGoing();
 };
 
@@ -33,8 +35,13 @@ Story.prototype.endStory = function() {
 }
 
 Story.prototype.showFullStory = function() {
-  return this.messages.map(message => message.text).join(" \n");
+  return this.messages.map(function(message){
+    return message.text
+  }).join(" \n");
 };
 
-
-module.exports = Story;
+try {
+  module.exports = Story;
+} catch(e) {
+  console.log("caught exception "+ e)
+}

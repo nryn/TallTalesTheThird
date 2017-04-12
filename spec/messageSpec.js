@@ -1,5 +1,3 @@
-'use strict'
-
 describe("Message", function() {
 
   beforeEach(function() {

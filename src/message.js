@@ -8,4 +8,9 @@ Message.prototype.showText = function () {
   return this.text;
 };
 
-module.exports = Message;
+
+try {
+  module.exports = Message;
+} catch(e) {
+  console.log("caught exception "+ e)
+}
