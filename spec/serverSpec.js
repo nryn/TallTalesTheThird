@@ -18,6 +18,5 @@ describe("TallTales Server", function() {
         done();
       });
     });
-
   });
 });

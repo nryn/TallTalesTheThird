@@ -40,4 +40,10 @@ describe("Theme", function() {
     var chosenWord = theme.findThemeWords("space", 1)[0]
     expect(themeWords.space).toContain(chosenWord)
   });
+
+  it("removes player used words from theme array", function() {
+    theme.storyWords = ["tomato", "rocket", "space", "peppers"]
+    theme.isWordUsed("I like space")
+    expect(theme.storyWords).not.toContain("space");
+  })
 });
