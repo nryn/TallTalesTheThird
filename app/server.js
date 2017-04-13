@@ -15,8 +15,6 @@ var connections = [];
 server.listen(process.env.PORT || 3000);
 
 console.log("Server up...")
-var story = new Story();
-console.log("Story exists...")
 
 app.use(express.static('public'));
 
@@ -32,6 +30,8 @@ app.get('/index', function(req, res) {
 app.post('/index', function(req, res) {
   res.sendFile(__dirname + '/index.html')
   story = new Story(Object.keys(req.body)[0])
+  console.log("Story exists...")
+  rotatePlayers();
 });
 
 //controller helper

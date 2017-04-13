@@ -9,6 +9,7 @@
   "author": "TallTalesTeam",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.17.1",
     "express": "*",
     "jasmine-node": "^1.14.5",
     "request": "^2.81.0",
