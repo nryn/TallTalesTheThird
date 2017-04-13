@@ -1,0 +1,39 @@
+#story-container {
+  background-color: #d8d8d8;
+  height: 50%;
+  min-height: 500px;
+  overflow: hidden;
+}
+
+#story-container ul {
+  padding: 0;
+  margin-left: 10px;
+}
+
+#story-container li {
+  list-style: none;
+  padding: 5px;
+  padding-left: 1em;
+  background-color: #cce6ef;
+  margin-bottom: 10px;
+}
+
+#message-maker {
+  display: flex;
+  justify-content: space-between;
+  min-height: 35px;
+}
+
+#message-body {
+  width: 90%;
+}
+
+.submit {
+  width: 10%;
+  min-width: 70px;
+  border-style: none;
+}
+
+body {
+  height: 100vh;
+}

@@ -1,4 +1,4 @@
-'use strict'
+var Story = require('../app/story');
 
 describe("Story", function() {
 
@@ -21,23 +21,23 @@ describe("Story", function() {
   });
 
   it("should have a default messages maximum", function() {
-    for(i=0;i<story.MESSAGE_LIMIT;i++) {
+    for(var i=0;i<story.MESSAGE_LIMIT;i++) {
       story.addMessage("this is a regular message")
     }
     expect(function() {
       story.addMessage("this should be game over")
-    }).toThrowError("the game is over")
+    }).toThrow("the game is over")
   });
 
   it("should end the story on the max message submission", function() {
-    for(i = 0; i < story.MESSAGE_LIMIT; i++) {
+    for(var i = 0; i < story.MESSAGE_LIMIT; i++) {
       story.addMessage("this is a message")
     }
     expect(story.over).toBe(true)
   });
 
   it("should return the full story", function() {
-    for(i=0; i<2; i++) {
+    for(var i=0; i<2; i++) {
       story.addMessage("this is a regular message")
     }
     expect(story.showFullStory()).toEqual("this is a regular message \nthis is a regular message")

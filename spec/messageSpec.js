@@ -1,4 +1,4 @@
-'use strict'
+var Message = require('../app/message')
 
 describe("Message", function() {
 
