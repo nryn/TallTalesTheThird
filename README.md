@@ -75,6 +75,7 @@ I want to be able to sign up
 * An end product that doesn't spell fantasy as 'fantasty'.
 * Maintaining effective pairing throughout the week.
 * Sticking with TDD even when things looked bleak.
+* All tests passing!
 
 ## Struggles
 * Trying to find the right technologies. We started off with Meteor but it was too opinionated and TDD wasn't very happily integrated with it so we cut our losses and switched to using nodeJS and Express in order to use our current knowledge of vanilla JS.
