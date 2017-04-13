@@ -22,7 +22,7 @@
 }
 
 #message-maker {
-  display: flex;
+  display: none;
   justify-content: space-between;
   min-height: 35px;
   width:50%;
