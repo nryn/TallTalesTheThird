@@ -29,11 +29,17 @@ function spawnMessagesAndCheckStoryOver(socket) {
   };
 };
 
+function rotatePlayers() {
+  connections.push(connections.shift())
+  io.sockets.emit('hide textbox')
+  connections[0].emit('show textbox')
+};
+
 //routing and socket controller
 
 io.sockets.on('connection', function(socket){
   connections.push(socket);
-  console.log("connection made. there are " + connections.length + " connections." );
+  console.log("connection " + socket.id + " made. there are " + connections.length + " connections." );
   spawnMessagesAndCheckStoryOver(socket);
 
   socket.on('disconnect', function(data){
@@ -43,9 +49,13 @@ io.sockets.on('connection', function(socket){
 
   socket.on('send message', function(data){
     console.log("send message received with data: " + data);
+    // console.log(connections[0].id + "'s turn")
     story.addMessage(data)
     io.sockets.emit('update messages', {message: story.messages[story.messages.length - 1]})
     if (story.over) {io.sockets.emit('end game', story.showFullStory())}
+    rotatePlayers();
   });
+
+
 
 });
