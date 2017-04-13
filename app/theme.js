@@ -28,4 +28,4 @@ function shuffleArray(array) {
     return array;
 }
 
-module.exports = Theme;
+module.exports = [Theme, themeWords];

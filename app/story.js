@@ -1,10 +1,6 @@
 'use strict'
 
-try {
-  var Message = require('./message')
-} catch(e) {
-  console.log("caught exception "+ e)
-}
+var Message = require('./message')
 
 function Story(){
   this.messages = [];
@@ -40,8 +36,4 @@ Story.prototype.showFullStory = function() {
   }).join(" \n");
 };
 
-try {
-  module.exports = Story;
-} catch(e) {
-  console.log("caught exception "+ e)
-}
+module.exports = Story;
