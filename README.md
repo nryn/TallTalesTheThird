@@ -8,6 +8,7 @@ Time taken: Four days
 Technologies used:
   * nodeJS
   * Jasmine
+  * Jasmine-node
   * Express
   * Socket.io
   * Trello
@@ -70,7 +71,7 @@ I want to be able to sign up
 
 ## Successes
 * Using new technologies for the functionality we needed including Socket.io, nodeJS, Jasmine-node, and Express.
-* Implementing some of our nice to haves as well as MVP.
+* Implementing nearly all of our nice to haves as well as MVP.
 * An end product that doesn't spell fantasy as 'fantasty'.
 * Maintaining effective pairing throughout the week.
 * Sticking with TDD even when things looked bleak.
