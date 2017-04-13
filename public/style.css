@@ -112,3 +112,13 @@ body {
 .dropdown:hover .dropbtn {
     background-color: #3e8e41;
 }
+
+.button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px;
+  font-size: 15px;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+}
