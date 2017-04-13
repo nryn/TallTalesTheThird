@@ -77,8 +77,6 @@ I want to be able to sign up
 * Sticking with TDD even when things looked bleak.
 * All tests passing!
 
-![passing-tests][https://files.slack.com/files-tmb/T03ALA7H4-F4YRNULJF-508f42a95f/screen_shot_2017-04-13_at_16.30.48_720.png]
-
 ## Struggles
 * Trying to find the right technologies. We started off with Meteor but it was too opinionated and TDD wasn't very happily integrated with it so we cut our losses and switched to using nodeJS and Express in order to use our current knowledge of vanilla JS.
 * Implementing Jasmine-node instead of Jasmine standalone. We started off with standalone Jasmine for our testing as we'd used it before. However, we found we needed to change this once we brought our code server-side. We switched standalone out for Jasmine-node and figured out how to require it and restructure our directory to accommodate our new testing framework.
