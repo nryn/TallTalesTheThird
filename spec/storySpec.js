@@ -40,6 +40,6 @@ describe("Story", function() {
     for(var i=0; i<2; i++) {
       story.addMessage("this is a regular message")
     }
-    expect(story.showFullStory()).toEqual("this is a regular message \nthis is a regular message")
+    expect(story.showFullStory()).toEqual("this is a regular message \n<br>this is a regular message")
   });
 });

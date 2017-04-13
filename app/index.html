@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>Tall Tales</title>
     <link rel="stylesheet" href="style.css">
+    <script src="/socket.io/socket.io.js"></script>
   </head>
   <body>
     <h1>This is the thing.</h1>
@@ -11,9 +12,44 @@
     <div id="story-container"></div>
 
     <form id="message-maker">
-      <input type="text" id="message-body">
+      <input type="text" id="message-body" required>
       <input class="submit" type="submit">
     </form>
+
+    <script>
+    (function(){
+      var socket = io.connect();
+      var messageForm = document.getElementById('message-maker'); // form
+      var message = document.getElementById('message-body'); // textarea
+      var storyContainer = document.getElementById('story-container'); // div
+
+      messageForm.addEventListener("submit", function(e){
+        e.preventDefault();
+        socket.emit('send message', message.value);
+        message.value = '';
+      }, false);
+
+      socket.on('update messages', function(data){
+        var para = document.createElement('p')
+        para.innerHTML = data.message.text;
+        storyContainer.appendChild(para);
+      });
+
+      socket.on('end game', function(fullStory){
+        messageForm.remove();
+        storyContainer.innerHTML = fullStory;
+      });
+
+      socket.on('spawn all messages', function(data){
+        data.messages.forEach(function(msg){
+          var para = document.createElement('p')
+          para.innerHTML = msg.text;
+          storyContainer.appendChild(para);
+        })
+      });
+
+    })();
+    </script>
 
   </body>
 </html>
