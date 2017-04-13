@@ -1,10 +1,13 @@
 'use strict'
 
 var Message = require('./message')
+var exported = require('./theme')
+var Theme = exported[0]
 
-function Story(){
+function Story(theme){
   this.messages = [];
   this.MESSAGE_LIMIT = 20;
+  this.theme = new Theme(theme, 10)
 };
 
 Story.prototype.isStoryOver = function() {
