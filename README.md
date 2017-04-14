@@ -57,12 +57,13 @@ As a player,
 So that there is a challenge in the story-writing game,
 I want to be able to choose from a set group of words
 ```
+
+### TBC
 ```
 As a user
 To increase fun and intrigue
 I want to only show the more recent messages
 ```
-### TBC
 ```
 As a player,
 So that I have an identity on the turn-based story-writing game,
